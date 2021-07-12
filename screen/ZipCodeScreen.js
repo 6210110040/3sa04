@@ -1,5 +1,5 @@
 import Reader from "react";
-import { FlatList, StatusBar, Text, View } from "react-native";
+import { FlatList, StatusBar, StyleSheet, Text, View } from "react-native";
 
 const availableZipItems = [
     { place: 'Hatyai', code: '90110' },
@@ -29,6 +29,19 @@ export default function ZipCodeScreen(){
             <StatusBar style="auto" />
         </View>
     );
-   
    }
+
+   const styles = StyleSheet.create({
+       ZipItem: {
+           flex: 1,
+       },
+       zipPlace : {
+           flex: 1,
+       },
+       zipCode: {
+           flex: 1,
+       }
+   })
+
+
    
