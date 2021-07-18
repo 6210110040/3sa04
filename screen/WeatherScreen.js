@@ -1,4 +1,5 @@
-import { View } from "react-native";
+import React from "react";
+import { StyleSheet, View } from "react-native";
 import Weather from "../components/Weather";
 
 export default function WeatherScreen({route}){
@@ -8,3 +9,5 @@ export default function WeatherScreen({route}){
         </View>
     )    
 }
+
+

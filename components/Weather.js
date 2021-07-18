@@ -13,7 +13,8 @@ export default function Weather(props) {
                      setForecastInfo({
                         main: json.weather[0].main,
                         description: json.weather[0].description,
-                        temp: json.main.temp
+                        temp: json.main.temp,
+                        min: json.main.temp_min
                     });
                 })
                 .catch((error) => {
@@ -30,19 +31,9 @@ export default function Weather(props) {
     return (
         <View>
             <ImageBackground source={require('../Blackground.jpg')} style={styles.backdrop}>
-                <Text>Zip Code</Text>
-                <Text>{props.zipCode}</Text>
+                <Text style={styles.Text}>Zip Code is {props.zipCode}</Text>
                 <Forecast {...forecastInfo} />
             </ImageBackground>
-        </View>
-    );
-}
-
-export default function WeatherScreen({route}) {
-    return (
-        <View>
-            <Weather zipCode={route.params.zipCode} />
-            <StatusBar style="auto" />
         </View>
     );
 }
@@ -54,4 +45,8 @@ const styles = StyleSheet.create({
         width: '100%',
         height: '100%'
     },
+    Text: {
+        fontSize: 20 ,
+        textAlign: 'center'
+    }
 });

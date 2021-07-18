@@ -1,5 +1,7 @@
-import Reader from "react";
-import { FlatList, StyleSheet, Text, View } from "react-native";
+import React from "react";
+import { FlatList, StyleSheet, Text, TouchableHighlight, View } from "react-native";
+import { useNavigation } from "@react-navigation/core";
+import { StatusBar } from "expo-status-bar";
 
 const availableZipItems = [
     { place: 'Hatyai', code: '90110' },
@@ -24,8 +26,8 @@ const _keyExtractor = item => item.code
 export default function ZipCodeScreen(){
     const navigation = useNavigation()
     return (
-        <View>
-            <FlatList
+        <View >
+            <FlatList style={styles.Text2}
                 data={availableZipItems}
                 keyExtractor={_keyExtractor}
                 renderItem={({item}) => <ZipItem {...item} navigation={navigation}/>}
@@ -37,14 +39,21 @@ export default function ZipCodeScreen(){
 
    const styles = StyleSheet.create({
        ZipItem: {
-           flex: 1,
+            flex: 1,
+            
        },
        zipPlace : {
-           flex: 1,
+            flex: 1,
        },
        zipCode: {
-           flex: 1,
-       }
+            flex: 1,
+       },
+       Text: {
+        fontSize: 20 ,
+        textAlign: 'center',
+        paddingTop: 20,
+        color: 'blue' 
+    }
    })
 
 
