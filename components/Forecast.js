@@ -12,6 +12,7 @@ export default function Forecast(props) {
                 <Text style={styles.Text1} >{props.min}  °C</Text>
                 <Text style={styles.Text2} >Temp max is</Text>
                 <Text style={styles.Text1} >{props.max}  °C</Text>
+                <Text style={styles.Text3} >Wind speed is {props.wind_speed}</Text>
              </View>
         </View>
     );
@@ -35,6 +36,12 @@ export default function Forecast(props) {
     Text1: {
         fontSize: 25 ,
         color: 'red' ,
+        textAlign: 'center',
+        paddingTop: 10
+    },
+    Text3: {
+        fontSize: 25 ,
+        color: 'orange' ,
         textAlign: 'center',
         paddingTop: 10
     }
